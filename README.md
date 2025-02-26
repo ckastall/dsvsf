@@ -12,6 +12,14 @@ Copyright © 2024 Chedly Kastally & Patrick Mardulyn.
 
 All rights reserved.
 
+# Citation
+
+Please cite:
+
+Kastally, C., Dellicour, S., Hardy, O. J., Gilbert, M., & Mardulyn, P. (2021). Estimating Migration of Gonioctena quinquepunctata (Coleoptera: Chrysomelidae) Inside a Mountain Range in a Spatially Explicit Context. Insect Systematics and Diversity, 5(5).
+
+https://doi.org/10.1093/isd/ixab019
+
 # Usage
 
 ## Usage: `pgs` input mode
