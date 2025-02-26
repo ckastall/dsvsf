@@ -96,9 +96,9 @@ Reach out if this is an issue.
 
 ## Posterior sample size and ploidy
 
-The minimum sample size at a locus to make a projection of the SFS at a given (haploid) size is n<sub>t</sub>.
+The minimum sample size at a locus to make a projection of the DSVSF at a given (haploid) size is n<sub>t</sub>.
 
-Attention: note that when using a VCF, the script expect diploid samples, yet the posterior sample sizes must be indicated in a number of (haploid) gene copies, ie, if there is no missing data at all, the posterior sample size n<sub>t</sub> should be twice the number of individual sampled.
+Attention: note that when using a VCF, the script expects diploid samples, yet the posterior sample sizes must be indicated in a number of (haploid) gene copies, ie, if there is no missing data at all, the posterior sample size n<sub>t</sub> should be twice the number of individual sampled.
 
 Loci with observed size (after removing missing data) below n<sub>t</sub> for any given population are dropped during the projection (a warning message is issued for those loci).
 
