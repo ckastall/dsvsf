@@ -72,7 +72,7 @@ In `vcf` input mode, two additional input files are required:
 Further, a method to handle missing data in the VCF has to be provided with `--vcf_missing_data`:
 
 - `randomSample`: at each locus, and for each population, a random set of samples are picked to compute the allele count (the size of the set is defined in the `posterior_n_file`. This is faster to compute, but add randomness in the computation of patterns.
-- `proj`: at each locus, and for each population, a projection using the hypergeometric distribution is used to determine the patterns observed. This should recover the true set of patterns, but is cpu-intensive and requires a small simplification during the projection: patterns with probability $< 0.01$ (at the locus level) are excluded from the computation.
+- `proj`: at each locus, and for each population, a projection using the hypergeometric distribution is used to determine the patterns observed. This should recover the true set of patterns, but is cpu-intensive and requires a small simplification during the projection: patterns with probability $`< 0.01`$ (at the locus level) are excluded from the computation.
 
 # Notes about using VCF as input
 
@@ -96,10 +96,10 @@ Reach out if this is an issue.
 
 ## Posterior sample size and ploidy
 
-The minimum sample size at a locus to make a projection of the SFS at a (haploid) size $n_t$ is $n_t$.
+The minimum sample size at a locus to make a projection of the SFS at a (haploid) size $`n_t`$ is $`n_t`$.
 
 When using a VCF, the script expect diploid samples, but the posterior sample sizes must be indicated in a number of (haploid) gene copies.
 
-Loci with observed size (after removing missing data) below $n_t$ for any given population are dropped during the projection (a warning message is issued for those loci).
+Loci with observed size (after removing missing data) below $`n_t`$ for any given population are dropped during the projection (a warning message is issued for those loci).
 
 If the total number of samples is below the posterior sample size, the analysis stops early since no loci in the data could ever have a sample size big enough for a projection.
