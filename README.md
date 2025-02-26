@@ -16,9 +16,7 @@ All rights reserved.
 
 Please cite:
 
-Kastally, C., Dellicour, S., Hardy, O. J., Gilbert, M., & Mardulyn, P. (2021). Estimating Migration of Gonioctena quinquepunctata (Coleoptera: Chrysomelidae) Inside a Mountain Range in a Spatially Explicit Context. Insect Systematics and Diversity, 5(5).
-
-https://doi.org/10.1093/isd/ixab019
+Kastally, C., Dellicour, S., Hardy, O. J., Gilbert, M., & Mardulyn, P. (2021). _Estimating Migration of Gonioctena quinquepunctata (Coleoptera: Chrysomelidae) Inside a Mountain Range in a Spatially Explicit Context._ Insect Systematics and Diversity, 5(5). https://doi.org/10.1093/isd/ixab019
 
 # Usage
 
@@ -38,10 +36,10 @@ Rscript ./DSVSF_computation.R \
 
 In `pgs` input mode, four output files are produced:
 
-- \*dsvsf_output_table.tsv: a tab separated table with the DSVSF patterns and their count in the input file
-- \*global_he_output.tsv:   a tab separated table with the loci ID and their He (at the entire sample level)
-- \*global_Fst_output.txt:  a text file with the value of the overall Fst (Weir & Cockerham 1984, Evolution)
-- \*all_pwFst_output.tsv:   a table with pairwise Fst for each population pair (Weir & Cockerham 1984, Evolution)
+- dsvsf_output_table.tsv: the DSVSF patterns and their count in the input file
+- global_he_output.tsv:   loci ID and their He (at the entire sample level)
+- global_Fst_output.txt:  value of the overall Fst (Weir & Cockerham 1984, Evolution)
+- all_pwFst_output.tsv:   pairwise Fsts for all population pairs (Weir & Cockerham 1984, Evolution)
 
 ## Usage: `vcf` input mode
 
@@ -62,7 +60,7 @@ Rscript ./DSVSF_computation.R \
 
 In `vcf` input mode, one output is produced: 
 
-- \*dsvsf_output_table.tsv: a tab separated table with the DSVSF patterns and their count in the input file
+- dsvsf_output_table.tsv: DSVSF patterns and their count in the input file
 
 In `vcf` input mode, two additional input files are required:
 
@@ -75,42 +73,6 @@ Further, a method to handle missing data in the VCF has to be provided with `--v
 
 - `randomSample`: at each locus, and for each population, a random set of samples are picked to compute the allele count (the size of the set is defined in the `posterior_n_file`. This is faster to compute, but add randomness in the computation of patterns.
 - `proj`: at each locus, and for each population, a projection using the hypergeometric distribution is used to determine the patterns observed. This should recover the true set of patterns, but is cpu-intensive and requires a small simplification during the projection: patterns with probability $< 0.01$ (at the locus level) are excluded from the computation.
-
-# Citation
-
-Kastally, C., Dellicour, S., Hardy, O. J., Gilbert, M., & Mardulyn, P. (2021).
-_Estimating Migration of Gonioctena quinquepunctata (Coleoptera: Chrysomelidae) Inside a Mountain Range in a Spatially Explicit Context._
-Insect Systematics and Diversity, 5(5). https://doi.org/10.1093/isd/ixab019
-
-# Usage
-
-Usage: ./DSVSF_computation.R -i input_file [-t 0.1] -m pgs [-o output_prefix]
-
-Options:
-
-	-i INPUT_FILE, --input_file=INPUT_FILE
-		Input file [Default: example/out_simulation_SNPs_1.txt]
-
-	-m INPUT_MODE, --input_mode=INPUT_MODE
-		Input mode: pgs or vcf [Default: pgs]
-
-	-n POSTERIOR_N_FILE, --posterior_n_file=POSTERIOR_N_FILE
-		File with posterior sample sizes, required if using a vcf [Default: example/posterior_n_per_pop_file_2.tsv]
-
-	-p POPULATION_FILE, --population_file=POPULATION_FILE
-		population file, required if using a vcf [Default: example/pop_file_2.tsv]
-
-	-s VCF_MISSING_DATA, --vcf_missing_data=VCF_MISSING_DATA
-		Method to handle missing data: randomSample or proj [Default: randomSample]
-
-	-t THRESHOLD, --threshold=THRESHOLD
-		Threshold used to compute the DSVSF [Default: 0.1]
-
-	-o OUTPUT_PREFIX, --output_prefix=OUTPUT_PREFIX
-		Output prefix [Default: Output_]
-
-	-h, --help
-		Show this help message and exit
 
 # Notes about using VCF as input
 
