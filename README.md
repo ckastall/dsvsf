@@ -1,6 +1,18 @@
-# General Description and Usage
+# General Description
 
-This script computes the Distribution of Spatial Variation in SNP Frequencies (DSVSF) and the expected of heterozygosity either from an output of PhyloGeoSim (v2.0.beta_210319) (`--input_mode pgs`) or from a VCF file (`--input_mode vcf`). It is meant to be used as a command line tool.
+This script computes the Distribution of Spatial Variation in SNP Frequencies (DSVSF) and the expected of heterozygosity either from an output of PhyloGeoSim (v2.0.beta_210319) (`--input_mode pgs`) or from a VCF file (`--input_mode vcf`).
+
+# Authors
+
+Chedly Kastally & Patrick Mardulyn
+
+# Copyright
+
+Copyright © 2024 Chedly Kastally & Patrick Mardulyn.
+
+All rights reserved.
+
+# Usage
 
 ## Usage: `pgs` input mode
 
